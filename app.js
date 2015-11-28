@@ -7,12 +7,19 @@ require('./global');
 
 var app = require('express')(),
     bodyParser = require('body-parser'),
+    ejs = require('ejs'),
     http = require('http');
 
+app.set('views', __dirname + '/views');
+app.engine('.html', ejs.__express);
+app.set('view engine', 'html');
 
 /*-------------regist routes-------------------*/
 app.use('/api',Routes.api.index);
+app.get('/upload_html',function(req,res){
+    res.render('upload',{title:"upload"});
 
+});
 app.use('/',function(req,res,next){
     res.status(200).send('Welcome!Server is Running...');
 
