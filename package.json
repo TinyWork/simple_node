@@ -1,0 +1,21 @@
+{
+  "name": "simple",
+  "version": "0.0.1",
+  "description": "a simple demo for nodejs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "demo"
+  ],
+  "author": "Meng Yan",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.3",
+    "body-parser": "^1.14.1",
+    "lazily-require": "^0.1.0",
+    "approot": "^0.2.1",
+    "mysql": "^2.9.0"
+  }
+}
