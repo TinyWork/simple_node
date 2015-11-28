@@ -18,10 +18,16 @@ app.use('/',function(req,res,next){
 
 });
 
-// handle all error request
+// handle 404 error request
 app.use(function(req, res, next){
     res.status(404).send('Page not found!');
 
+})
+
+// handle all uncaught exception
+process.on('uncaughtException', function(err) {
+    console.error('UNCAUGHT EXCEPTION');
+    console.error('stack', err.stack);
 })
 
 /*-------------start server---------------------*/

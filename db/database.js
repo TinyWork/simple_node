@@ -3,6 +3,7 @@
 */
 
 var mysql = require('mysql');
+var util =  require('util');
 
 function dbClient(cb){
     var conn = mysql.createConnection(
@@ -30,6 +31,7 @@ function query(sql, cb){
 		console.log('[ERROR:]' + err);
 	    }
 	    else{
+		console.log("DB RESULT:" + util.inspect(rows));
 		cb(rows);
 	    }
 	});
